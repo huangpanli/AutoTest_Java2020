@@ -357,9 +357,9 @@ function showOutput(id, name) {
 </script>
 <div class='heading card'>
 <h1>【pyse_unittest_ddt】Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-02-04 18:06:22</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:13.880109</p>
-<p class='attribute'><strong>Status:</strong> Pass:1</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-02-04 20:02:50</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.604707</p>
+<p class='attribute'><strong>Status:</strong> Error:1</p>
 
 <p class='description'>Describe: 测试HTMLTestRunner类库生成测试报告！</p>
 </div>
@@ -402,31 +402,44 @@ function showOutput(id, name) {
     <td>Screenshots</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>test_java2020.Test_Java2020</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c1.1',1)">Detail</a></td>
     <td>&nbsp;</td>
 </tr>
 
-<tr id='pt1.1.1' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_java</div></td>
+<tr id='et1.1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_java</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.1')" >
-        pass</a>
-    <div id='div_pt1.1.1' class="popup_window">
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_et1.1.1')" >
+        error</a>
+    <div id='div_et1.1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_et1.1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.1: 注册新用户成功！
-This is Java2020 AutoTest Project!
+et1.1.1: Traceback (most recent call last):
+  File "C:\Program Files (x86)\Jenkins\workspace\AutoTest_Java2020\test_cases\test_java2020.py", line 13, in test_java
+    dr = webdriver.Chrome()
+  File "C:\Python\Python37\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python\Python37\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: cannot find Chrome binary
+
 
 
         </pre>
@@ -439,9 +452,9 @@ This is Java2020 AutoTest Project!
 <tr id='total_row'>
     <td>Total</td>
     <td>1</td>
-    <td class="text text-success">1</td>
+    <td class="text text-success">0</td>
     <td class="text text-danger">0</td>
-    <td class="text text-warning">0</td>
+    <td class="text text-warning">1</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>
@@ -452,7 +465,7 @@ This is Java2020 AutoTest Project!
     <script type="text/javascript">
 var data = [
 	{
-		value: 0,
+		value: 1,
 		color: "#ebccd1",
 		label: "Error",
 		labelColor: 'white',
@@ -466,7 +479,7 @@ var data = [
 		labelFontSize: '16'
 	},
 	{
-		value : 1,
+		value : 0,
 		color : "#d6e9c6",
 		label : "Pass",
 		labelColor: 'white',
