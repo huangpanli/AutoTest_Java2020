@@ -11,7 +11,12 @@ suit = unittest.defaultTestLoader.discover(test_dir,pattern="test*.py")
 class Test_Java2020(unittest.TestCase):
 	def test_java(self):
 		#dr = webdriver.Chrome('C:\\Users\\Lily\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe')
-		dr = webdriver.Chrome()
+		chrome_options = webdriver.ChromeOptions()
+		chrome_options.add_argument('--headless')
+		chrome_options.add_argument('--no-sandbox')
+		chrome_options.add_argument('--disable-gpu')
+		chrome_options.add_argument('--disable-dev-shm-usage')
+		dr = webdriver.Chrome(options=chrome_options)
 		dr.get('http://localhost:8088/router.html#/')
 		dr.implicitly_wait(10)
 		dr.maximize_window()
