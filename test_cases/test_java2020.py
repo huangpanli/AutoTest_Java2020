@@ -13,7 +13,7 @@ class Test_Java2020(unittest.TestCase):
 		# windows使用
         dr = webdriver.Chrome('C:\\Users\\Lily\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe')
 		# linux使用
-		dr = webdriver.Chrome('/usr/bin/chromedriver.exe')
+		dr = webdriver.Chrome('chromedriver.exe')
         dr.get('http://localhost:8088/router.html#/')
         dr.implicitly_wait(10)
         dr.maximize_window()
