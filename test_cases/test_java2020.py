@@ -12,7 +12,7 @@ suit = unittest.defaultTestLoader.discover(test_dir,pattern="test*.py")
 class Test_Java2020(unittest.TestCase):
 	def test_java(self):
 		#dr = webdriver.Chrome('C:\\Users\\Lily\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe')
-		dr = webdriver.Chrome('/usr/bin/chromedriver.exe')
+		dr = webdriver.Chrome()
 		dr.get('http://localhost:8088/router.html#/')
 		dr.implicitly_wait(10)
 		dr.maximize_window()
