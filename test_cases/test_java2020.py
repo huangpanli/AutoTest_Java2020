@@ -6,14 +6,27 @@ import time
 from HTMLTestRunner import HTMLTestRunner
 
 #定义测试用例所在目录
-test_dir = './test_cases'
-suit = unittest.defaultTestLoader.discover(test_dir,pattern="test*.py")
+#test_dir = './test_cases'
+#suit = unittest.defaultTestLoader.discover(test_dir,pattern="test*.py")
 
 class Test_Java2020(unittest.TestCase):
 	def test_java(self):
+		#windows下使用
 		#dr = webdriver.Chrome('C:\\Users\\Lily\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe')
-		dr = webdriver.Chrome()
+		#dr = webdriver.Chrome()
+		#linux下使用
+		print("webdriver")
+		chrome_options = Options()
+		chrome_options.add_argument('--no-sandbox')
+		chrome_options.add_argument('--disable-dev-shm-usage')
+		chrome_options.add_argument('--headless')
+		chrome_options.add_argument('blink-settings=imagesEnabled=false')
+		chrome_options.add_argument('--disable-gpu')
+		print("webdriver开始启动")
+		dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver",chrome_options=chrome_options)
+		print("webdriver启动中")
 		dr.get('http://localhost:8088/router.html#/')
+		print("webdriver启动结束")
 		dr.implicitly_wait(10)
 		dr.maximize_window()
 		new_reg = dr.find_element_by_xpath('//*[@id="app"]/div/a[1]/button')
