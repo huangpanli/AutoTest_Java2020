@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 import unittest
 import time
 from HTMLTestRunner import HTMLTestRunner
+from pyvirtualdisplay import Display
 
 #定义测试用例所在目录
 #test_dir = './test_cases'
@@ -16,17 +17,20 @@ class Test_Java2020(unittest.TestCase):
 		#dr = webdriver.Chrome()
 		#linux下使用
 		print("webdriver")
-		chrome_options = Options()
-		chrome_options.set_headless()
-		chrome_options.add_argument('--no-sandbox')
-		chrome_options.add_argument('--disable-dev-shm-usage')
-		chrome_options.add_argument('--headless')
-		chrome_options.add_argument('blink-settings=imagesEnabled=false')
-		chrome_options.add_argument('--disable-gpu')
+		#chrome_options = Options()
+		#chrome_options.set_headless()
+		#chrome_options.add_argument('--no-sandbox')
+		#chrome_options.add_argument('--disable-dev-shm-usage')
+		#chrome_options.add_argument('--headless')
+		#chrome_options.add_argument('blink-settings=imagesEnabled=false')
+		#chrome_options.add_argument('--disable-gpu')
 		print("webdriver开始启动")
-		dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver",chrome_options=chrome_options)
+		#dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver",chrome_options=chrome_options)
 		#dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
 		print("webdriver启动中")
+		display = Display(visible=0, size=(900, 800))
+		display.start()
+		dr = webdriver.Firefox(executable_path="/usr/bin/geckodriver")
 		dr.get('http://localhost:8088/router.html/')
 		#dr.get('http://192.168.0.66:8088/router.html/')
 		print("webdriver启动结束")
@@ -40,5 +44,6 @@ class Test_Java2020(unittest.TestCase):
 		print(u"注册新用户成功！")
 		print(u"This is Java2020 AutoTest Project!")
 		dr.quit()
+		display.stop
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
