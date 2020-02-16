@@ -1,6 +1,7 @@
 #-*- coding: UTF-8 -*-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver import FirefoxOptions
 import unittest
 import time
 from HTMLTestRunner import HTMLTestRunner
@@ -30,7 +31,9 @@ class Test_Java2020(unittest.TestCase):
 		print("webdriver启动中")
 		#display = Display(visible=0, size=(1200, 800))
 		#display.start()
-		dr = webdriver.Firefox(executable_path="/usr/bin/geckodriver")
+		opts = FirefoxOptions()
+		opts.add_argument("--headless")
+		dr = webdriver.Firefox(executable_path="/usr/bin/geckodriver",firefox_options=opts)
 		dr.get('http://localhost:8088/router.html/')
 		#dr.get('http://192.168.0.66:8088/router.html/')
 		print("webdriver启动结束")
