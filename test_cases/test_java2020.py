@@ -26,11 +26,11 @@ class Test_Java2020(unittest.TestCase):
 		#chrome_options.add_argument('blink-settings=imagesEnabled=false')
 		#chrome_options.add_argument('--disable-gpu')
 		print("webdriver开始启动")
+		#Chrome使用,不稳定。
 		#dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver",chrome_options=chrome_options)
 		#dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
 		print("webdriver启动中")
-		#display = Display(visible=0, size=(1200, 800))
-		#display.start()
+		#Firefox使用，稳定。
 		opts = FirefoxOptions()
 		opts.add_argument("--headless")
 		dr = webdriver.Firefox(executable_path="/usr/bin/geckodriver",firefox_options=opts)
@@ -47,6 +47,5 @@ class Test_Java2020(unittest.TestCase):
 		print(u"注册新用户成功！")
 		print(u"This is Java2020 AutoTest Project!")
 		dr.quit()
-		#display.stop
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
