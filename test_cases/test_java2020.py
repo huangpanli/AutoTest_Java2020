@@ -28,8 +28,8 @@ class Test_Java2020(unittest.TestCase):
 		#dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver",chrome_options=chrome_options)
 		#dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
 		print("webdriver启动中")
-		display = Display(visible=0, size=(1200, 800))
-		display.start()
+		#display = Display(visible=0, size=(1200, 800))
+		#display.start()
 		dr = webdriver.Firefox(executable_path="/usr/bin/geckodriver")
 		dr.get('http://localhost:8088/router.html/')
 		#dr.get('http://192.168.0.66:8088/router.html/')
@@ -44,6 +44,6 @@ class Test_Java2020(unittest.TestCase):
 		print(u"注册新用户成功！")
 		print(u"This is Java2020 AutoTest Project!")
 		dr.quit()
-		display.stop
+		#display.stop
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
