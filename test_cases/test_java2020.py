@@ -31,7 +31,9 @@ class Test_Java2020(unittest.TestCase):
 		print("webdriver启动结束")
 		dr.implicitly_wait(30)
 		dr.maximize_window()
+		print("==1")
 		new_reg = dr.find_element_by_xpath('//*[@id="app"]/div/a[1]/button')
+		print("==2")
 		new_reg_txt = new_reg.text
 		self.assertEqual(new_reg_txt,"注册新用户","注册新用户失败！！！")
 		print(u"注册新用户成功！")
