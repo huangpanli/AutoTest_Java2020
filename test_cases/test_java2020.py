@@ -28,7 +28,7 @@ class Test_Java2020(unittest.TestCase):
 		#dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver",chrome_options=chrome_options)
 		#dr = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
 		print("webdriver启动中")
-		display = Display(visible=0, size=(900, 800))
+		display = Display(visible=0, size=(1200, 800))
 		display.start()
 		dr = webdriver.Firefox(executable_path="/usr/bin/geckodriver")
 		dr.get('http://localhost:8088/router.html/')
