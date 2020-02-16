@@ -29,7 +29,7 @@ class Test_Java2020(unittest.TestCase):
 		#dr.get('http://localhost:8088/router.html/')
 		dr.get('http://192.168.0.66:8088/router.html/')
 		print("webdriver启动结束")
-		dr.implicitly_wait(30)
+		dr.implicitly_wait(300)
 		dr.maximize_window()
 		new_reg = dr.find_element_by_xpath('//*[@id="app"]/div/a[1]/button')
 		new_reg_txt = new_reg.text
